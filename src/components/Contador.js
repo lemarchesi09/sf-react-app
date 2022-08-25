@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import "./contador.css"
 
 const Contador = () => {
     const [count, setCount] = useState(0)
@@ -45,16 +45,20 @@ const Contador = () => {
     }
     console.log(animals);
     return(
-        <div>
-            <h1> Tuki´s Counter</h1>
-            <p>Tuki´s : {count}</p>
+        <div className="contenedor">
+            <h1>Tasks</h1>
+            <h2> Tuki´s Counter</h2>
+            <p>Tuki´s : <span>{count}</span> </p>
 
-            <button onClick={increase}> Add a Tuki =)</button>
-            <button onClick={decrease}> Remove a Tuki =(</button>
+            <div className="botones">
+                <button onClick={decrease}> Remove a Tuki =(</button>
+                <button onClick={increase}> Add a Tuki =)</button>
+
+            </div>
 
             <h2>Info</h2>
-            <h3>Name: {info.name}</h3>
-            <h3>Age: {info.age}</h3>
+            <h3>Name: <span>{info.name}</span></h3>
+            <h3>Age: <span>{info.age}</span></h3>
             <button onClick={infoChanger}> Change Info</button>
 
             <h2>Loader</h2>
@@ -65,7 +69,7 @@ const Contador = () => {
             <button onClick={animalsHandler} > Add Animals</button>
             <ul>
                 {animals.map(animal =>{
-                    return <li>{animal}</li>
+                    return <li><p>{animal}</p></li>
                 })}
             </ul>
         </div>
